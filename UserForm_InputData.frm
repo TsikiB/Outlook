@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm_InputData 
-   Caption         =   "Patch Data Input"
+   Caption         =   "Au10tix Patch - Data Input"
    ClientHeight    =   4500
    ClientLeft      =   120
    ClientTop       =   465
@@ -13,3 +13,25 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Sub UserForm_initialize()
+  CommandButton_Submit.SetFocus
+End Sub
+
+Private Sub CommandButton_Cancel_Click()
+        Unload Me
+End Sub
+
+Private Sub CommandButton_RunUpdate_Click()
+
+If DataValidation Then
+End If
+
+
+
+Public Function DataValidation()
+
+
+
+
+
+End Sub
