@@ -7,24 +7,21 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
-Public strPatchID As String
-Public arrWorkItems As Variant
-
 Sub PatchRequest_Main()
 
-Dim strInputTitle, strPatchID, strWorkItems As String
+Dim strInputTitle, strWorkItems As String
 Dim WorkItemID As Double
 Dim LoopExit As Boolean
 
 strInputTitle = "Au10tix Patch Request"
 LoopExit = False
 
-
 UserForm_InputData.Show
-
-    MsgBox "Oops_1"
-
-Exit Sub
+If DataValidation Then
+    MsgBox "arrWorkItems(" & UBound(arrWorkItems) & "): " & arrWorkItems(UBound(arrWorkItems))
+Else
+    Exit Sub
+End If
 'GetSMTPAddressForRecipients (Outlook.ActiveWindow)
 
 

@@ -13,25 +13,37 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+
 Sub UserForm_initialize()
-  CommandButton_Submit.SetFocus
+    DataValidation = False
+    CommandButton_Submit.SetFocus
 End Sub
 
 Private Sub CommandButton_Cancel_Click()
+        DataValidation = False
         Unload Me
 End Sub
 
-Private Sub CommandButton_RunUpdate_Click()
+Sub CommandButton_Submit_Click()
 
-If DataValidation Then
-End If
+'On Error Resume Next
 
+'sArr = 0
+For Each i In Split(TextBox_Content, ",")
+    If IsEmpty(arrWorkItems) Then
+        arrWorkItems = Array(i)
+    Else
+        ReDim Preserve arrWorkItems(0 To UBound(arrWorkItems) + 1) As Variant
+        'ReDim Preserve arrWorkItems(UBound(arrWorkItems) + 1)
+        arrWorkItems(UBound(arrWorkItems)) = i
+    End If
+'    sArr = sArr + 1
+Next
 
-
-Public Function DataValidation()
-
-
-
-
+DataValidation = True
+Unload Me
 
 End Sub
+
+
