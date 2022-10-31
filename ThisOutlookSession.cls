@@ -9,19 +9,28 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Sub PatchRequest_Main()
 
-Dim strInputTitle, strWorkItems As String
 Dim WorkItemID As Double
 Dim LoopExit As Boolean
 
-strInputTitle = "Au10tix Patch Request"
 LoopExit = False
+'-->>>
 
+
+
+
+
+
+
+'-->>>
 UserForm_InputData.Show
 If DataValidation Then
-    MsgBox "arrWorkItems(" & UBound(arrWorkItems) & "): " & arrWorkItems(UBound(arrWorkItems))
+    MsgBox "Last value of arrWorkItems(" & UBound(arrWorkItems) & "): " & arrWorkItems(UBound(arrWorkItems)) & vbCrLf & _
+            "Your seperator is: " & strSeperander
 Else
     Exit Sub
 End If
+
+Exit Sub
 'GetSMTPAddressForRecipients (Outlook.ActiveWindow)
 
 
